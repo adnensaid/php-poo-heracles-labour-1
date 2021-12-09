@@ -11,8 +11,17 @@ do {
     echo  $adnen->getName("👺")." 🔪 ".$mohamed->getName("👻")." 💙 ".$mohamed->getName("👻").": ".$mohamed->getLife()."\n\n";  
     $mohamed->fight($adnen);
     echo $mohamed->getName("👻")." 🔪 ".$adnen->getName("👺")." 💙 ".$adnen->getName("👺").": ".$adnen->getLife()."\n\n";    
-}while(($mohamed->getLife() > 0) && ( $adnen->getLife() > 0 ));
+}while($mohamed->isAlive() && $adnen->isAlive());
+
 /* resultat du combat */
-$adnen->isAlive($mohamed);
+if ($adnen->getLife() > $mohamed->getLife()) {
+  echo "💀 ".$mohamed->getName("👻")." is dead \n";
+  echo "🏆 ".$adnen->getName("👺")." wins (💙".$adnen->getLife().")\n";
+} else if($adnen->getLife() < $mohamed->getLife()){
+  echo "💀 ".$adnen->getName("👺")." is dead \n";
+  echo "🏆 ".$mohamed->getName("👻")." wins (💙".$mohamed->getLife().")\n";
+} else {
+  echo "match null"; 
+} 
 
 ?>

@@ -36,15 +36,11 @@ class Fighter
         }
         return $cible->life;
     }
-    public function isAlive(Object $cible) {
-        if ($this->life > $cible->life) {
-            echo "💀 ".$cible->getName("👻")." is dead \n";
-            echo "🏆 ".$this->getName("👺")." wins (💙".$this->life.")\n";
-        } else if($this->life < $cible->life){
-            echo "💀 ".$this->getName("👺")." is dead \n";
-            echo "🏆 ".$cible->getName("👻")." wins (💙".$cible->life.")\n";
-        } else {
-            echo "match null"; 
-        } 
+    public function isAlive() {
+      if ($this->life > 0) {
+          return true;
+      }else{
+          return false;
+      }
     }
 }
